@@ -1,0 +1,32 @@
+.hk-highlight-plus {
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+.hk-highlight-plus .highlight-table {
+  width: 100%;
+  border-spacing: 0;
+  border-radius: 6px;
+  overflow: hidden;
+  font-family: Menlo, Consolas, Monaco, "Courier New", monospace;
+  background: transparent;
+}
+
+.hk-highlight-plus .line-number {
+  width: 3.5rem;
+  padding: 0.35rem 0.75rem;
+  text-align: right;
+  vertical-align: top;
+  user-select: none;
+  opacity: 0.55;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hk-highlight-plus .code-line {
+  padding: 0.35rem 0.75rem;
+  white-space: pre;
+}
+
+.hk-highlight-plus .code-line code {
+  display: block;
+}

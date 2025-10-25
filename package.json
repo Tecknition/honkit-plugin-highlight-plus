@@ -1,0 +1,28 @@
+{
+  "name": "@tecknition/honkit-plugin-highlight-plus",
+  "version": "1.0.0",
+  "description": "Enhanced code highlighting plugin for Honkit with custom language and theme support",
+  "main": "index.js",
+  "keywords": ["honkit", "gitbook", "highlight", "terraform", "code", "plugin"],
+  "author": "Javi",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tecknition/honkit-plugin-highlight-plus.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "test": "node --test",
+    "coverage": "c8 node --test"
+  },
+  "dependencies": {
+    "highlight.js": "^11.10.0"
+  },
+  "devDependencies": {
+    "c8": "^9.1.0",
+    "eslint": "^8.57.0"
+  }
+}
