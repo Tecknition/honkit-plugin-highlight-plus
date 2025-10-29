@@ -3,7 +3,14 @@
   "version": "1.0.0",
   "description": "Enhanced code highlighting plugin for Honkit with custom language and theme support",
   "main": "index.js",
-  "keywords": ["honkit", "gitbook", "highlight", "terraform", "code", "plugin"],
+  "keywords": [
+    "honkit",
+    "gitbook",
+    "highlight",
+    "terraform",
+    "code",
+    "plugin"
+  ],
   "author": "Javi",
   "license": "MIT",
   "repository": {
@@ -15,14 +22,38 @@
   },
   "scripts": {
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --write \"**/*.{js,json,md}\"",
+    "format:check": "prettier --check \"**/*.{js,json,md}\"",
     "test": "node --test",
-    "coverage": "c8 node --test"
+    "test:watch": "node --test --watch",
+    "coverage": "c8 --reporter=html --reporter=text --reporter=lcov node --test",
+    "complexity": "eslint --ignore-pattern 'coverage/**' .",
+    "complexity:report": "npx cr --format json --output complexity-report.json .",
+    "duplication": "npx jscpd .",
+    "quality": "npm run format:check && npm run lint && npm run complexity && npm run duplication && npm run coverage",
+    "precommit": "npm run format && npm run lint:fix && npm test",
+    "prepare": "husky"
   },
   "dependencies": {
     "highlight.js": "^11.10.0"
   },
   "devDependencies": {
     "c8": "^9.1.0",
-    "eslint": "^8.57.0"
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-complexity": "^1.0.2",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.2.11",
+    "prettier": "^3.6.2"
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{json,md}": [
+      "prettier --write"
+    ]
   }
 }
