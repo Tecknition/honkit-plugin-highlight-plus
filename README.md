@@ -34,4 +34,3 @@ bucket = "my-bucket"
 acl = "private"
 }
 \`\`\`
-
