@@ -1,3 +1,5 @@
+#!/usr/bin/env sh
+
 # Run quality checks before commit
 echo "🔍 Running pre-commit quality checks..."
 
